@@ -1,6 +1,6 @@
 @echo off
 
-set TOOLS=%~p0tools/windows
+set TOOLS=%CD%/tools/windows
 
 if [%1]==[] echo This script requires one argument. Please pass it in. && goto:eof
 
