@@ -12,6 +12,4 @@ cmd /c "%TOOLS%/ffmpeg"
 
 ffmpeg.exe -i %INFILE% "%~n1.mp4"
 
-if [%2]==[-move] mv "%~n1.mp4" "%~p1"
-
 rm ffmpeg.exe
