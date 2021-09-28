@@ -26,8 +26,6 @@ if [%2]==[] thpconv.exe -j temp/*.jpg -r 59.94 -d output.thp -v
 
 ren output.thp "%~n1.thp"
 
-if [%3]==[-move] mv "%~n1.thp" "%~p1"
-
 rm thpconv.exe dsptool.dll
 
 rm -r temp mplayer
