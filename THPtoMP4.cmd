@@ -1,6 +1,6 @@
 @echo off
 
-set TOOLS=%CD%/tools/windows
+set TOOLS=%~p0tools/windows
 
 if [%1]==[] echo This script requires one argument. Please pass it in. && goto:eof
 
@@ -10,6 +10,8 @@ if NOT %~x1==.thp echo The argument is a unsupported file. Please pass in a THP 
 
 cmd /c "%TOOLS%/ffmpeg"
 
-ffmpeg.exe -i %INFILE% %~n1.mp4
+ffmpeg.exe -i %INFILE% "%~n1.mp4"
+
+if [%2]==[-move] mv "%~n1.mp4" "%~p1"
 
 rm ffmpeg.exe

@@ -1,6 +1,6 @@
 @echo off
 
-set TOOLS=%CD%/tools/windows
+set TOOLS=%~p0tools/windows
 
 if [%1]==[] echo This script requires one argument. Please pass it in. && goto:eof
 
@@ -24,7 +24,9 @@ if [%2]==[-a] thpconv.exe -j temp/*.jpg -s temp.wav -r 59.94 -d output.thp -v &&
 
 if [%2]==[] thpconv.exe -j temp/*.jpg -r 59.94 -d output.thp -v
 
-ren output.thp "%~n1".thp
+ren output.thp "%~n1.thp"
+
+if [%3]==[-move] mv "%~n1.thp" "%~p1"
 
 rm thpconv.exe dsptool.dll
 
