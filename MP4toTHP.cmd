@@ -16,7 +16,7 @@ ffmpeg.exe -i %INFILE% -r 59.94 -vf scale=640:368 "%CD%\temp\frame%%03d.jpg"
 
 rm ffmpeg.exe
 
-if [%2]==[-a] cmd /c "%TOOLS%/mplayer" && mplayer.exe -ao pcm:file=temp.wav %INFILE% && rm mplayer.exe
+if [%2]==[-a] cmd /c "%TOOLS%/mplayer" && mplayer.exe -vo null -ao pcm:file=temp.wav %INFILE% && rm mplayer.exe
 
 cmd /c "%TOOLS%/thpconv"
 
