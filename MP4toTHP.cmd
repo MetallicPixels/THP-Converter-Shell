@@ -12,7 +12,7 @@ mkdir "%CD%/temp"
 
 cmd /c "%TOOLS%/ffmpeg"
 
-ffmpeg.exe -i %INFILE% -r 59.94 -vf scale=640:368 "%CD%\temp\frame%%03d.jpg"
+ffmpeg.exe -i %INFILE% -r 59.94 -vf scale=640:368 -qscale:v 2 "%CD%\temp\frame%%05d.jpg"
 
 rm ffmpeg.exe
 
